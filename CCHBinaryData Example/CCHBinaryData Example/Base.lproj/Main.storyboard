@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngbar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qdb-NU-njd">
+                                <rect key="frame" x="256" y="52" width="88" height="31"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Text" translatesAutoresizingMaskIntoConstraints="NO" id="0zN-Ug-0dX">
+                                <rect key="frame" x="180" y="123" width="240" height="477"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="PM4-t7-oHJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0zN-Ug-0dX" firstAttribute="top" secondItem="Qdb-NU-njd" secondAttribute="bottom" constant="40" id="AmS-yU-lh7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="0zN-Ug-0dX" secondAttribute="bottom" id="Ked-uF-eYH"/>
+                            <constraint firstItem="Qdb-NU-njd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="hJs-fI-fmu"/>
+                            <constraint firstAttribute="centerX" secondItem="Qdb-NU-njd" secondAttribute="centerX" id="s5c-ik-p9J"/>
+                            <constraint firstAttribute="centerX" secondItem="0zN-Ug-0dX" secondAttribute="centerX" id="uh5-NI-20l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="0zN-Ug-0dX" id="zig-eI-lqk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pngbar.png" width="88" height="31"/>
+    </resources>
+</document>
