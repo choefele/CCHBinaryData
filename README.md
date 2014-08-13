@@ -1,7 +1,7 @@
 CCHBinaryData
 =============
 
-Utility classes for handling binary data. Currently includes 
+Utility classes for handling binary data, such as reading various data types from byte buffers.
 
 [![Build Status](https://travis-ci.org/choefele/CCHBinaryData.png?branch=master)](https://travis-ci.org/choefele/CCHBinaryData)&nbsp;![Version](https://cocoapod-badges.herokuapp.com/v/CCHBinaryData/badge.png)&nbsp;![Platform](https://cocoapod-badges.herokuapp.com/p/CCHBinaryData/badge.png)
 
