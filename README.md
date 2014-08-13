@@ -1,7 +1,7 @@
 CCHBinaryData
 =============
 
-Utility classes for handling binary data
+Utility classes for handling binary data. Currently includes 
 
 [![Build Status](https://travis-ci.org/choefele/CCHBinaryData.png?branch=master)](https://travis-ci.org/choefele/CCHBinaryData)&nbsp;![Version](https://cocoapod-badges.herokuapp.com/v/CCHBinaryData/badge.png)&nbsp;![Platform](https://cocoapod-badges.herokuapp.com/p/CCHBinaryData/badge.png)
 
@@ -9,3 +9,40 @@ See [Changes](https://github.com/choefele/CCHMapClusterController/blob/master/CH
 
 Need to talk to a human? [I'm @claushoefele on Twitter](https://twitter.com/claushoefele).
 
+## Installation
+
+Use [CocoaPods](http://cocoapods.org) to integrate `CCHBinaryData` into your project. Minimum deployment targets are 7.0 for iOS and 10.9 for OS X.
+
+```ruby
+platform :ios, '7.0'
+pod "CCHMapClusterController"
+```
+
+```ruby
+platform :osx, '10.9'
+pod "CCHMapClusterController"
+```
+
+## Reading binary data
+
+`CCHBinaryDataReader` can read various data types from byte buffers provided as `NSData`. The following sample code reads chunk information from a PNG image file:
+
+```Objective-C
+    // Read PNG file. Data is big endian, see http://www.w3.org/TR/PNG/#7Integers-and-byte-order
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"pngbar" ofType:@"png"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    CCHBinaryDataReader *binaryDataReader = [[CCHBinaryDataReader alloc] initWithData:data options:CCHBinaryDataReaderBigEndian];
+    
+    // Skip file signature
+    [binaryDataReader setNumberOfBytesRead:8];
+    
+    // Read chunks, see http://www.w3.org/TR/PNG/#5Chunk-layout
+    while ([binaryDataReader canReadNumberOfBytes:4]) {
+        unsigned int length = [binaryDataReader readUnsignedInt];
+        NSString *chunkType = [binaryDataReader readStringWithNumberOfBytes:4 encoding:NSASCIIStringEncoding];
+        [binaryDataReader skipNumberOfBytes:length];
+        unsigned int crc = [binaryDataReader readUnsignedInt];
+        
+        [NSLog(@"%@ length: %tu, crc: 0x%08x\n", chunkType, length, crc];
+    }
+```
