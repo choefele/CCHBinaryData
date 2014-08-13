@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSData *data;
 @property (nonatomic) const uint8_t *currentPosition;
-@property (nonatomic, getter = isLittleEndian) BOOL littleEndian;
+@property (nonatomic, getter = isBigEndian) BOOL bigEndian;
 
 @end
 
@@ -24,7 +24,7 @@
     if (self) {
         _data = data;
         _currentPosition = (const uint8_t *)data.bytes;
-        _littleEndian = (options & CCHBinaryDataReaderLittleEndian) != 0;
+        _bigEndian = (options & CCHBinaryDataReaderBigEndian) != 0;
     }
     
     return self;
@@ -77,10 +77,10 @@
     NSAssert([self canReadNumberOfBytes:sizeof(short)], @"Passed end of data");
 
     short value = *((short *)self.currentPosition);
-    if (self.isLittleEndian) {
-        value = CFSwapInt16LittleToHost(value);
-    } else {
+    if (self.isBigEndian) {
         value = CFSwapInt16BigToHost(value);
+    } else {
+        value = CFSwapInt16LittleToHost(value);
     }
     [self skipNumberOfBytes:sizeof(short)];
     
@@ -98,10 +98,10 @@
     NSAssert([self canReadNumberOfBytes:sizeof(int)], @"Passed end of data");
 
     int value = *((int *)self.currentPosition);
-    if (self.isLittleEndian) {
-        value = CFSwapInt32LittleToHost(value);
-    } else {
+    if (self.isBigEndian) {
         value = CFSwapInt32BigToHost(value);
+    } else {
+        value = CFSwapInt32LittleToHost(value);
     }
     [self skipNumberOfBytes:sizeof(int)];
     
@@ -119,10 +119,10 @@
     NSAssert([self canReadNumberOfBytes:sizeof(long long)], @"Passed end of data");
 
     long long value = *((long long *)self.currentPosition);
-    if (self.isLittleEndian) {
-        value = CFSwapInt64LittleToHost(value);
-    } else {
+    if (self.isBigEndian) {
         value = CFSwapInt64BigToHost(value);
+    } else {
+        value = CFSwapInt64LittleToHost(value);
     }
     [self skipNumberOfBytes:sizeof(long long)];
     

@@ -25,7 +25,7 @@
     // Read PNG file. Data is big endian, see http://www.w3.org/TR/PNG/#7Integers-and-byte-order
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"pngbar" ofType:@"png"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    CCHBinaryDataReader *binaryDataReader = [[CCHBinaryDataReader alloc] initWithData:data options:0];
+    CCHBinaryDataReader *binaryDataReader = [[CCHBinaryDataReader alloc] initWithData:data options:CCHBinaryDataReaderBigEndian];
     
     // Skip file signature
     [binaryDataReader setNumberOfBytesRead:8];

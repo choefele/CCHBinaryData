@@ -10,7 +10,7 @@
 
 /** Options for changing the behavior of this class. */
 typedef NS_OPTIONS(NSUInteger, CCHBinaryDataReaderOptions) {
-    CCHBinaryDataReaderLittleEndian = (1UL << 0)    /// Changes mode to little endian (default: big endian)
+    CCHBinaryDataReaderBigEndian = (1UL << 0)    /// Endianess of multi-byte values (default: little endian)
 };
 
 /**
@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSUInteger, CCHBinaryDataReaderOptions) {
 /** Current reading position. */
 @property (nonatomic, readonly) const uint8_t *currentPosition;
 /** Endianess of multi-byte values. */
-@property (nonatomic, getter = isLittleEndian, readonly) BOOL littleEndian;
+@property (nonatomic, getter = isBigEndian, readonly) BOOL bigEndian;
 
 /**
  Initializes this class with data to read and options.
