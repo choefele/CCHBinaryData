@@ -37,11 +37,15 @@
 
 - (void)setNumberOfBytesRead:(NSUInteger)numberOfBytes
 {
+    NSAssert(numberOfBytes <= self.data.length, @"Passed end of data");
+    
     self.currentPosition = (const uint8_t *)self.data.bytes + numberOfBytes;
 }
 
 - (void)skipNumberOfBytes:(NSUInteger)numberOfBytes
 {
+    NSAssert([self canReadNumberOfBytes:numberOfBytes], @"Passed end of data");
+    
     self.currentPosition += numberOfBytes;
 }
 

@@ -65,8 +65,12 @@
     CCHBinaryDataReader *binaryDataReader = [self.class binaryDataReaderWithFileName:@"bigendian" options:0];
     
     XCTAssertTrue([binaryDataReader canReadNumberOfBytes:1]);
-    [binaryDataReader skipNumberOfBytes:binaryDataReader.data.length - 1];
+    [binaryDataReader setNumberOfBytesRead:binaryDataReader.data.length - 1];
     XCTAssertTrue([binaryDataReader canReadNumberOfBytes:1]);
+    [binaryDataReader setNumberOfBytesRead:binaryDataReader.data.length];
+    XCTAssertFalse([binaryDataReader canReadNumberOfBytes:1]);
+    
+    [binaryDataReader reset];
     [binaryDataReader skipNumberOfBytes:binaryDataReader.data.length];
     XCTAssertFalse([binaryDataReader canReadNumberOfBytes:1]);
 }
