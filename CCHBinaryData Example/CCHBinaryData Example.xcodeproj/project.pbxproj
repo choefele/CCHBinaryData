@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62BA16F3199BE1C2004F6F0F /* CCHBinaryData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCHBinaryData.h; sourceTree = "<group>"; };
 		62CB9CB4199AB17A00887B67 /* CCHBinaryData Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCHBinaryData Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CB9CB8199AB17A00887B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62CB9CB9199AB17A00887B67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 		62F06915199AB281001D2DBA /* CCHBinaryData */ = {
 			isa = PBXGroup;
 			children = (
+				62BA16F3199BE1C2004F6F0F /* CCHBinaryData.h */,
 				62F06916199AB281001D2DBA /* CCHBinaryDataReader.h */,
 				62F06917199AB282001D2DBA /* CCHBinaryDataReader.m */,
 			);
