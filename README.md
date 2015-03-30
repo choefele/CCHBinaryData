@@ -15,12 +15,12 @@ Use [CocoaPods](http://cocoapods.org) to integrate `CCHBinaryData` into your pro
 
 ```ruby
 platform :ios, '7.0'
-pod "CCHMapClusterController"
+pod "CCHBinaryData"
 ```
 
 ```ruby
 platform :osx, '10.9'
-pod "CCHMapClusterController"
+pod "CCHBinaryData"
 ```
 
 ## Reading binary data
