@@ -25,9 +25,7 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef NS_DESIGNATED_INITIALIZER
-#define NS_DESIGNATED_INITIALIZER
-#endif
+NS_ASSUME_NONNULL_BEGIN
 
 /** Options for changing the behavior of this class. */
 typedef NS_OPTIONS(NSUInteger, CCHBinaryDataReaderOptions) {
@@ -113,3 +111,5 @@ typedef NS_OPTIONS(NSUInteger, CCHBinaryDataReaderOptions) {
 - (NSString *)readStringWithNumberOfBytes:(NSUInteger)numberOfBytes encoding:(NSStringEncoding)encoding;
 
 @end
+
+NS_ASSUME_NONNULL_END
