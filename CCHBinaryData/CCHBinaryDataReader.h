@@ -25,6 +25,14 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef NS_ASSUME_NONNULL_BEGIN
+#define NS_ASSUME_NONNULL_BEGIN
+#endif
+
+#ifndef NS_ASSUME_NONNULL_END
+#define NS_ASSUME_NONNULL_END
+#endif
+
 NS_ASSUME_NONNULL_BEGIN
 
 /** Options for changing the behavior of this class. */
