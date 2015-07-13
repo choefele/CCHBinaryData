@@ -3,7 +3,7 @@ CCHBinaryData
 
 Utility classes for handling binary data, such as reading various data types from byte buffers.
 
-[![Build Status](https://travis-ci.org/choefele/CCHBinaryData.png?branch=master)](https://travis-ci.org/choefele/CCHBinaryData)&nbsp;![Version](https://cocoapod-badges.herokuapp.com/v/CCHBinaryData/badge.png)&nbsp;![Platform](https://cocoapod-badges.herokuapp.com/p/CCHBinaryData/badge.png)
+[![Build Status](https://img.shields.io/travis/choefele/CCHBinaryData.svg)](https://travis-ci.org/choefele/CCHBinaryData)&nbsp;![Version](https://img.shields.io/cocoapods/v/CCHBinaryData.svg)&nbsp;![Platform](http://img.shields.io/cocoapods/p/CCHBinaryData.svg)
 
 See [Releases](https://github.com/choefele/CCHBinaryData/releases) for a high-level overview of recent updates.
 
