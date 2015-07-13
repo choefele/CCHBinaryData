@@ -35,6 +35,11 @@
 
 @implementation CCHBinaryDataReader
 
+- (instancetype)init
+{
+    abort();
+}
+
 - (instancetype)initWithData:(NSData *)data options:(CCHBinaryDataReaderOptions)options
 {
     self = [super init];
