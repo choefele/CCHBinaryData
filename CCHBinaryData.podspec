@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name     = 'CCHBinaryData'
-  spec.version  = '1.0.1'
+  spec.version  = '1.0.2'
   spec.license  = 'MIT'
   spec.summary  = 'Utility classes for handling binary data.'
   spec.homepage = 'https://github.com/choefele/CCHBinaryData'
