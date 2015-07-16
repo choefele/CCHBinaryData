@@ -44,6 +44,7 @@ typedef NS_OPTIONS(NSUInteger, CCHBinaryDataReaderOptions) {
 /** Endianess of multi-byte values. */
 @property (nonatomic, getter = isBigEndian, readonly) BOOL bigEndian;
 
+/** Not available - use `initWithData:options:` instead. */
 - (instancetype)init NS_UNAVAILABLE;
 
 /**
